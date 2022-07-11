@@ -13,4 +13,5 @@ aws cloudwatch put-metric-alarm  \
 --dimensions Name=InstanceId,Value=$instanceId Name=NodeName,Value=$hostName Name=ClusterName,Value=OSS-EKS-Cluster-02 \
 --evaluation-periods 2 \
 --alarm-actions arn:aws:sns:eu-west-3:390623597627:OSS_Test_CloudWatch_Alarms_Topic \
---unit Percent
+--unit Percent \
+--region eu-west-3
