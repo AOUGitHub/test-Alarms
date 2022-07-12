@@ -14,7 +14,7 @@ aws cloudwatch put-metric-alarm  \
 --period 180 \
 --threshold 70 \
 --comparison-operator GreaterThanThreshold \
---dimensions Name=InstanceId,Value=$instanceId Name=NodeName,Value=$hostName Name=ClusterName,Value=$cluster \
+--dimensions Name=InstanceId,Value=$instanceId Name=NodeName,Value=$hostName Name=ClusterName,Value=$EKSClusterName \
 --evaluation-periods 2 \
 --alarm-actions arn:aws:sns:eu-west-3:390623597627:OSS_Test_CloudWatch_Alarms_Topic \
 --unit Percent \
@@ -33,7 +33,7 @@ aws cloudwatch put-metric-alarm  \
 --period 180 \
 --threshold 70 \
 --comparison-operator GreaterThanThreshold \
---dimensions Name=InstanceId,Value=$instanceId Name=NodeName,Value=$hostName Name=ClusterName,Value=$cluster \
+--dimensions Name=InstanceId,Value=$instanceId Name=NodeName,Value=$hostName Name=ClusterName,Value=$EKSClusterName \
 --evaluation-periods 2 \
 --alarm-actions arn:aws:sns:eu-west-3:390623597627:OSS_Test_CloudWatch_Alarms_Topic \
 --unit Percent \
