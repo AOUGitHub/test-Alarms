@@ -1,9 +1,10 @@
 instanceId=`curl -s http://169.254.169.254/latest/meta-data/instance-id`
 hostName=`curl -s http://169.254.169.254/latest/meta-data/hostname`
 
-########################################
-#         Node CPU Usage Alarm         #
-########################################
+
+######################################################################################
+#                                Node CPU Usage Alarm                                #
+######################################################################################
 
 aws cloudwatch put-metric-alarm  \
 --alarm-name "$instanceId CPU-Usage" \
@@ -20,9 +21,10 @@ aws cloudwatch put-metric-alarm  \
 --unit Percent \
 --region eu-west-3
 
-########################################
-#         Node MEM Usage Alarm         #
-########################################
+
+######################################################################################
+#                              Node Memory Usage Alarm                               #
+######################################################################################
 
 aws cloudwatch put-metric-alarm  \
 --alarm-name "$instanceId Memory-Usage" \
