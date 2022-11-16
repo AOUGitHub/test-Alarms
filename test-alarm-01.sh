@@ -40,3 +40,12 @@ aws cloudwatch put-metric-alarm  \
 --alarm-actions arn:aws:sns:eu-west-3:390623597627:OSS_Test_CloudWatch_Alarms_Topic \
 --unit Percent \
 --region eu-west-3
+
+################################################################################################################################
+#                                                        Invoke Lambda                                                         #
+################################################################################################################################
+
+aws lambda invoke \
+    --function-name EKSNewNode \
+    --payload '{ "instance-id": $instanceId }' \
+    response.json
