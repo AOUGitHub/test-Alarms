@@ -48,5 +48,5 @@ aws cloudwatch put-metric-alarm  \
 aws lambda invoke \
     --function-name EKSNewNode \
     --cli-binary-format raw-in-base64-out \
-    --payload '{ "instance-id": "'"$instanceId"'" }' \
+    --payload '{ "NodeName": "'"$hostName"'" }' \
     response.json
